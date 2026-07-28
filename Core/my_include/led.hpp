@@ -10,7 +10,8 @@ public:
         OFF = 0,
         ON,
         BLINK_2S,
-        BLINK_1S
+        BLINK_1S,
+        BLINK_500MS
     };
 
     void SetMode(Mode mode);
@@ -19,6 +20,7 @@ public:
 private:
     static constexpr uint32_t BLINK_2S_PERIOD = 1000U;
     static constexpr uint32_t BLINK_1S_PERIOD = 500U;
+    static constexpr uint32_t BLINK_500MS_PERIOD = 250U;
 
     Mode mode_ = OFF;
     uint32_t last_tick_ = 0;

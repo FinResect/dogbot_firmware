@@ -24,6 +24,9 @@ void led::Update()
     case BLINK_1S:
         period = BLINK_1S_PERIOD;
         break;
+    case BLINK_500MS:
+        period = BLINK_500MS_PERIOD;
+        break;
     default:
         return;
     }

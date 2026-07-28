@@ -18,6 +18,10 @@ public:
     void write(const uint8_t* data, uint16_t len);
 
     void on_rx_complete(UART_HandleTypeDef* huart);
+    bool is_tx_busy() const;
+
+    void start_tx();
+    void on_tx_complete(UART_HandleTypeDef* huart);
 
 private:
     void start_rx();
@@ -31,6 +35,17 @@ private:
     volatile size_t head_ = 0;
     size_t tail_ = 0;
     uint8_t rx_byte_ = 0;
+
+    static constexpr size_t TX_BUF_SIZE = 128;
+    static constexpr size_t TX_BUF_MASK = TX_BUF_SIZE - 1;
+
+    uint8_t tx_buf_[TX_BUF_SIZE];
+    volatile size_t tx_head_ = 0;
+    volatile size_t tx_tail_ = 0;
+
+    uint8_t tx_dma_buf_[TX_BUF_SIZE];
+    volatile bool tx_busy_ = false;
+    volatile size_t tx_dma_len_ = 0;
 };
 
 #else

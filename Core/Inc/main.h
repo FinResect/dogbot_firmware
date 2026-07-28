@@ -57,6 +57,10 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define THROW_PWM1_Pin GPIO_PIN_6
+#define THROW_PWM1_GPIO_Port GPIOA
+#define THROW_PWM2_Pin GPIO_PIN_7
+#define THROW_PWM2_GPIO_Port GPIOA
 #define LED_Pin GPIO_PIN_2
 #define LED_GPIO_Port GPIOB
 #define RASPBERRY_TX_Pin GPIO_PIN_10
@@ -67,6 +71,10 @@ void Error_Handler(void);
 #define SERVO_TX_GPIO_Port GPIOB
 #define SERVO_RX_Pin GPIO_PIN_7
 #define SERVO_RX_GPIO_Port GPIOB
+#define IMU_SCL_Pin GPIO_PIN_8
+#define IMU_SCL_GPIO_Port GPIOB
+#define IMU_SDA_Pin GPIO_PIN_9
+#define IMU_SDA_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 
